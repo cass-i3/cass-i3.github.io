@@ -1,0 +1,58 @@
+/* I LOVE STEALING FONTS !! */
+
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+body {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 50%, rgba(2, 0, 36, 1) 100%)
+}
+
+.lefontothy {
+    font-family: "Varela Round", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+}
+
+@keyframes ananamation {
+    0% {
+        color: lightblue;
+    }
+    25% {
+        color: lightpink;
+    }
+    50% {
+        color: whitesmoke;
+    }
+    75% {
+        color: lightpink;
+    }
+    100% {
+        color: lightblue;
+    }
+}
+
+.ananamimationning {
+    animation: ananamation 5s infinite;
+}
+
+.centurredablabla {
+    display: flex;
+    justify-content: center;
+}
+
+.botom {
+    position: fixed;
+    bottom: 10px;
+    right: 0;
+    left: 0;
+}
+
+.yootooblogoe {
+    width: 40px;
+    height: 40px;
+}
+
+.waihtimeg {
+    filter: brightness(0) invert(100%);
+}
