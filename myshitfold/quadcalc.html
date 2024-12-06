@@ -1,1 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>quadratic equations // cass-i3</title>
+        <link rel="stylesheet" href="../kaskadingstaylshiyts.css">
+    </head>
+    <body>
+        <h1 class="lefontothy centurredablabla ananamimationning">Quadratic Equation Calculator</h1>
+        <p class="lefontothy centurredablabla">a =&nbsp;<input id="ain"></p>
+        <p class="lefontothy centurredablabla">b =&nbsp;<input id="bin"></p>
+        <p class="lefontothy centurredablabla">c =&nbsp;<input id="cin"></p>
 
+        <div class="centurredablabla"><button onclick="calc()"><span class="lefontothy" style="color:black;cursor:pointer;">calculate</span></button></div>
+
+        <p class="lefontothy centurredablabla">x =&nbsp;<span id="out1"></span>&nbsp;or x =&nbsp;<span id="out2"></span></p>
+
+        <p class="lefontothy centurredablabla">Explanation: the function is</p>
+        <br>
+        <p class="lefontothy centurredablabla ananamimationning"><span style="font-size: 1.5em">$ x = \frac{-b \pm \sqrt{{b}^{2} - 4ac}}{2a} $</span></p>
+        <p class="lefontothy centurredablabla">Your inputs are entered into the function. First, the&nbsp;$b$&nbsp;value has its sign flipped
+            and divided by&nbsp;$2a$.</p>
+            <p class="lefontothy centurredablabla">Afterwards, the variables are put into that scary ass square root thingy.</p>
+            <p class="lefontothy centurredablabla">$4ac$&nbsp;is subtracted from&nbsp;${b}^{2}$. That product is then square-rooted and divided by&nbsp;$2a$.</p>
+            <p class="lefontothy centurredablabla">For some reason there can be two answers to this function so both of those have different answers displayed seperately.</p>
+
+        <script>
+            MathJax = {
+              tex: {
+                inlineMath: [['$', '$']]
+              }
+            };
+            </script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>
+            var out1 = document.querySelector("#out1");
+            var out2 = document.querySelector('#out2');
+
+            var a = 0;
+            var b = 0;
+            var c = 0;
+
+            var altb = 0;
+
+            function calc() {
+                a = parseInt(document.querySelector('#ain').value);
+                b = parseInt(document.querySelector('#bin').value);
+                c = parseInt(document.querySelector('#cin').value);
+
+                switch(a){case"":alert("errorrrorrrrorrorrr no a value");break};
+                switch(b){case"":alert("errorrrorrrrorrorrr no b value");break};
+                switch(c){case"":alert("errorrrorrrrorrorrr no c value");break};
+
+                if (b < 0) {
+                    altb = Math.abs(b)
+                    altb = altb/(2*a)
+                } else {
+                    altb = -Math.abs(b)
+                    altb = altb/(2*a)
+                }
+
+                out1.textContent = altb.toString();
+
+                let discriminant = (b ** 2) - (4 * a * c);
+                if (discriminant < 0) {
+                    out2.textContent = "No real solutions.";
+                } else {
+                    let root = Math.sqrt(discriminant);
+                    let result1 = (-b + root) / (2 * a);
+                    let result2 = (-b - root) / (2 * a);
+                    out2.textContent = result2.toString();
+                }
+            }
+        </script>
+        <div class="botom">
+            <a href="./index.html" class="lefontothy lienkothy centurredablabla ananamimationning">back</a>
+        </div>
+    </body>
+</html>
