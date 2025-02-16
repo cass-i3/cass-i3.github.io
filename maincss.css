@@ -7,14 +7,14 @@ body {
     background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 50%, rgba(2, 0, 36, 1) 100%)
 }
 
-.lefontothy {
+.font {
     font-family: "Varela Round", sans-serif;
     font-weight: 400;
     font-style: normal;
     color: white;
 }
 
-@keyframes ananamation {
+@keyframes transanim {
     0% {
         color: lightblue;
     }
@@ -32,11 +32,11 @@ body {
     }
 }
 
-.ananamimationning {
-    animation: ananamation 5s infinite;
+.anim {
+    animation: transanim 5s infinite;
 }
 
-.centurredablabla {
+.center {
     display: flex;
     justify-content: center;
 }
@@ -48,19 +48,20 @@ body {
     left: 0;
 }
 
-.yootooblogoe {
+.yt {
     width: 40px;
     height: 40px;
 }
 
-.waihtimeg {
+.whiteimg {
     filter: brightness(0) invert(100%);
 }
 
-.lienkothy {
+.link {
     color: whitesmoke;
+    animation: transanim 5s infinite;
 }
 
-.indehnt {
+.indented {
     text-indent: 50px;
 }
