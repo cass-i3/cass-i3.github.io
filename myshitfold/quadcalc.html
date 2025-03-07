@@ -3,30 +3,31 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>quadratic equations // cass-i3</title>
+        <title>quadratic equations // dullkate</title>
         <link rel="stylesheet" href="../maincss.css">
     </head>
     <body>
-        <h1 class="font center anim">Quadratic Equation Calculator</h1>
-        <p class="font center">a =&nbsp;<input id="ain"></p>
-        <p class="font center">b =&nbsp;<input id="bin"></p>
-        <p class="font center">c =&nbsp;<input id="cin"></p>
+        <div class="main-content">
+            <h1 class="font center anim">Quadratic Equation Calculator</h1>
+            <p class="font center">a =&nbsp;<input id="ain"></p>
+            <p class="font center">b =&nbsp;<input id="bin"></p>
+            <p class="font center">c =&nbsp;<input id="cin"></p>
 
-        <div class="center"><button onclick="calc()"><span class="font" style="color:black;cursor:pointer;">calculate</span></button></div>
+            <div class="center"><button onclick="calc()"><span class="font" style="color:black;cursor:pointer;">calculate</span></button></div>
 
-        <p class="font center">x =&nbsp;<span id="out1"></span>&nbsp;or x =&nbsp;<span id="out2"></span></p>
+            <p class="font center">x =&nbsp;<span id="out1"></span>&nbsp;or x =&nbsp;<span id="out2"></span></p>
 
-        <p class="font center">Explanation: the function is</p>
-        <br>
-        <p class="font center anim"><span style="font-size: 1.5em">$ x = \frac{-b \pm \sqrt{{b}^{2} - 4ac}}{2a} $</span></p>
-        <p class="font center">Your inputs are entered into the function. First, the&nbsp;$b$&nbsp;value has its sign flipped
+            <p class="font center">Explanation: the function is</p>
+            <br>
+            <p class="font center anim"><span style="font-size: 1.5em">$ x = \frac{-b \pm \sqrt{{b}^{2} - 4ac}}{2a} $</span></p>
+            <p class="font center">Your inputs are entered into the function. First, the&nbsp;$b$&nbsp;value has its sign flipped
             and divided by&nbsp;$2a$.</p>
             <p class="font center">Afterwards, the variables are put into that scary ass square root thingy.</p>
             <p class="font center">$4ac$&nbsp;is subtracted from&nbsp;${b}^{2}$. That product is then square-rooted and divided by&nbsp;$2a$.</p>
             <p class="font center">For some reason there can be two answers to this function so both of those have different answers displayed seperately.</p>
             <p class="font center">The second answer is impossible if $({b}^{2}) - (4ac)$ is less than 0.</p>
+        </div>
 
-        
         <script>
             MathJax = {
               tex: {
@@ -50,9 +51,7 @@
                 b = parseInt(document.querySelector('#bin').value);
                 c = parseInt(document.querySelector('#cin').value);
 
-                switch(a){case"":alert("errorrrorrrrorrorrr no a value");break};
-                switch(b){case"":alert("errorrrorrrrorrorrr no b value");break};
-                switch(c){case"":alert("errorrrorrrrorrorrr no c value");break};
+                if (a == "" || b == "" || c == ""){alert("enter a valid value in each box"); return;}
 
                 if (b < 0) {
                     altb = Math.abs(b)
@@ -64,19 +63,19 @@
 
                 out1.textContent = altb.toString();
 
-                let discriminant = (b ** 2) - (4 * a * c);
-                if (discriminant < 0) {
+                let d = (b**2)-(4*a*c);
+                if (d < 0) {
                     out2.textContent = "No real solutions.";
                 } else {
-                    let root = Math.sqrt(discriminant);
-                    let result1 = (-b + root) / (2 * a);
-                    let result2 = (-b - root) / (2 * a);
+                    let r = Math.sqrt(d);
+                    let result1 = (-b+r)/(2*a);
+                    let result2 = (-b-r)/(2*a);
                     out2.textContent = result2.toString();
                 }
             }
         </script>
         <div>
-            <a href="./index.html" class="btm">back</a>
+            <a href="../index.html" class="btm">back</a>
         </div>
     </body>
 </html>
